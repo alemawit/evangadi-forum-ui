@@ -11,7 +11,7 @@ const Header = ({ user, loading }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // Clear token from storage
-    alert("User logged out successfully!");
+    //alert("User logged out successfully!");
     window.location.href = "/login"; // Redirect to authentication page
   };
 
