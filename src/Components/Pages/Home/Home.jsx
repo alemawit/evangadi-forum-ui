@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { AppState } from "../../App";
-// import axios from "../../Axios/Axios"; // Import axios instance
+import { AppState } from "../../../App";
 import classes from "./Home.module.css"; // Import CSS module for styles
-// import AuthUser from '../Components/AuthUser/AuthUser'
 import AllQuestions from "../AllQuestions/AllQuestions";
 
 const Home = () => {
