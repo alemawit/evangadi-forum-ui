@@ -37,7 +37,7 @@ function App() {
         setUser(data); // Set the authenticated user data
       } catch (error) {
         console.error(error.response); // Log any errors
-        navigate("/auth"); // Redirect to login if token is invalid
+        // navigate("/login"); // Redirect to login if token is invalid
       } finally {
         setLoading(false); // Stop loading
       }
