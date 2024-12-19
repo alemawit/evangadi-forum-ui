@@ -37,7 +37,7 @@ function App() {
         setUser(data); // Set the authenticated user data
       } catch (error) {
         console.error(error.response); // Log any errors
-        // navigate("/login"); // Redirect to login if token is invalid
+        navigate("/login", { replace: true }); // Redirect to login if token is invalid
       } finally {
         setLoading(false); // Stop loading
       }
@@ -48,7 +48,15 @@ function App() {
 
   if (loading) {
     return (
-      <h1>
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh", // Full viewport height
+          margin: 0, // Remove default margin
+        }}
+      >
         <img src={Loading} alt="" />
       </h1>
     ); // Render loading screen while user is being verified
