@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
-import axios from "../../Axios/Axios";
-import { AppState } from "../../App";
+import axios from "../../../Axios/Axios";
+import { AppState } from "../../../App";
 import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import classes from "./AllQuestions.module.css"; // Import the CSS Module

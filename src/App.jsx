@@ -37,7 +37,7 @@ function App() {
         setUser(data); // Set the authenticated user data
       } catch (error) {
         console.error(error.response); // Log any errors
-        // navigate("/login"); // Redirect to login if token is invalid
+        navigate("/login", { replace: true }); // Redirect to login if token is invalid
       } finally {
         setLoading(false); // Stop loading
       }
@@ -60,7 +60,7 @@ function App() {
       <Header user={user} loading={loading} />
       <Routes>
         <Route path="/" element={<LandingPage />}>
-          <Route path="/" element={<LoginSignup />} />
+          <Route path="/login" element={<LoginSignup />} />
 
           <Route
             path="/home"
