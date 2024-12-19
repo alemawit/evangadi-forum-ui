@@ -8,6 +8,9 @@
 .right_arrow_title {
   /* text-align: center; */
   padding-top: 60px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: lighter;
 }
 
 .questionInfo {
@@ -20,7 +23,8 @@
 .questionTitle {
   font-weight: bold;
   padding-left: 0;
-  margin-top: 20px;
+  margin-top: 0px;
+  font-size: 20px;
 }
 .questionTitle::after {
   content: "";
@@ -32,7 +36,7 @@
 }
 
 .questionDescription {
-  /* margin-top: 10px; */
+  margin-top: 20px;
 }
 
 .answer_body {
@@ -52,7 +56,8 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;
-  /* margin-bottom: 10px; */
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .avatarContainer {
@@ -62,7 +67,8 @@
 }
 
 .username {
-  margin-top: -10px ;
+  margin-top: 0 ;
+  padding-left: 10px;
 }
 
 .old_answer {

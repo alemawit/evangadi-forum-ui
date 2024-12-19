@@ -9,11 +9,13 @@ import AskQuestion from "./Components/Pages/QuestionPage/QuestionPage";
 import AnswerPage from "./Components/Pages/AnswerPage/AnswerPage";
 import LoginSignup from "./Components/Auth/LoginSignup";
 import Loading from "./assets/images/loadingicon.gif";
+import Four04 from "./Components/Pages/page404/Four04";
+import Footer from "./Components/Footer/Footer";
 
 export const AppState = createContext();
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("token");
-  return token ? children : <Navigate to="/login" />;
+  return token ? children : <Navigate to="/login" replace />;
 };
 
 function App() {
@@ -34,6 +36,7 @@ function App() {
             Authorization: `Bearer ${token}`, // Pass token in Authorization header
           },
         });
+        console.log(data);
         setUser(data); // Set the authenticated user data
       } catch (error) {
         console.error(error.response); // Log any errors
@@ -81,8 +84,10 @@ function App() {
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/questionpage" element={<AskQuestion />} />
           <Route path="home/answerpage/:questionid" element={<AnswerPage />} />
+          <Route path="*" element={<Four04 />} />
         </Route>
       </Routes>
+      {/* <Footer /> */}
     </AppState.Provider>
   );
 }
