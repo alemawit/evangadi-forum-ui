@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import classes from "./Footer.module.css"; // Import the CSS file for styling
 // import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { LiaFacebook } from "react-icons/lia";
-import footer_logo from "../../assets/image/footer_logo.png";
+import footer_logo from "../../assets/images/footer_logo.png";
 import { RiYoutubeLine } from "react-icons/ri";
 import { LiaInstagram } from "react-icons/lia";
 
