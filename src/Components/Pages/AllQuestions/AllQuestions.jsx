@@ -61,8 +61,8 @@ function AllQuestions() {
             </Link>
 
             {/* Navigation Arrow */}
-            <div>
-              <Link to={`/details/${element.questionid}`}>
+            <div className={classes.arrow_container}>
+              <Link to={`/home/answerpage/${element.questionid}`}>
                 <span className={classes.navigationArrow}>
                   <ArrowForwardIosRoundedIcon size={100} />
                 </span>

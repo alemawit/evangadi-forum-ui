@@ -7,6 +7,11 @@ import { IoPersonCircle } from "react-icons/io5";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import Loading from "../../../assets/images/loadingicon.gif";
 
+function truncateText(text, limit) {
+  if (text.length <= limit) return text;
+  return text.slice(0, limit) + "...";
+}
+
 function AnswerPage() {
   const { user } = useContext(AppState);
   const { questionid } = useParams();
@@ -15,6 +20,9 @@ function AnswerPage() {
   const [question, setQuestion] = useState(null);
   const [loading, setLoading] = useState(true);
   const token = localStorage.getItem("token");
+
+  const [showFullDescription, setShowFullDescription] = useState(false);
+  const [expandedAnswers, setExpandedAnswers] = useState({}); // Track which answers are expanded
 
   useEffect(() => {
     async function fetchQuestionAndAnswers() {
@@ -38,7 +46,6 @@ function AnswerPage() {
         );
       } catch (error) {
         console.error("Error fetching question and answers:", error);
-        // alert("Error fetching question or answers");
       } finally {
         setLoading(false); // Hide loader after fetching data
       }
@@ -66,7 +73,6 @@ function AnswerPage() {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      console.log(response);
       alert("Answer posted successfully");
       setShowAnswer([
         ...showAnswer,
@@ -88,8 +94,8 @@ function AnswerPage() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              height: "100vh", // Full viewport height
-              margin: 0, // Remove default margin
+              height: "100vh",
+              margin: 0,
             }}
           >
             <img src={Loading} alt="" />
@@ -110,7 +116,19 @@ function AnswerPage() {
               </div>
               <div className={classes.questionInfo}>
                 <p className={classes.questionDescription}>
-                  {question.content}
+                  {showFullDescription
+                    ? question.content
+                    : truncateText(question.content, 100)}
+                  {question.content.length > 100 && (
+                    <span
+                      className={classes.showMore}
+                      onClick={() =>
+                        setShowFullDescription(!showFullDescription)
+                      }
+                    >
+                      {showFullDescription ? " Show Less" : " Show More"}
+                    </span>
+                  )}
                 </p>
               </div>
             </>
@@ -137,7 +155,25 @@ function AnswerPage() {
                       </p>
                     </div>
                     <div className={classes.old_answer}>
-                      {answerElement.answer}
+                      {expandedAnswers[answerElement.answerid]
+                        ? answerElement.answer
+                        : truncateText(answerElement.answer, 50)}
+                      {answerElement.answer.length > 50 && (
+                        <span
+                          className={classes.showMore}
+                          onClick={() =>
+                            setExpandedAnswers((prev) => ({
+                              ...prev,
+                              [answerElement.answerid]:
+                                !prev[answerElement.answerid],
+                            }))
+                          }
+                        >
+                          {expandedAnswers[answerElement.answerid]
+                            ? " Show Less"
+                            : " Show More"}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
