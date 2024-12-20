@@ -18,7 +18,14 @@ body {
 
 .steps_title span {
   color: inherit; /* Keeps the span text style unchanged */
+ 
+  
 }
+.steps_title h3{
+  padding-top: 30px;
+}
+
+
 
 .steps_title_first::after {
   content: "";
