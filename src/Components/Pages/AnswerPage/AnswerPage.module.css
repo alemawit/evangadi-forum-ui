@@ -1,5 +1,5 @@
 .answerContainer {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   padding-top: 90px;
@@ -114,6 +114,13 @@ textarea {
 
   .questionTitle {
     font-size: 1.2em;
+  }
+  .answerItem{
+    margin-bottom: 50px;
+  padding-bottom: 30px;
+  }
+  .avatarContainer{
+    margin-top: 20px;
   }
 
   .questionDescription {

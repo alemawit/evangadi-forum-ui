@@ -68,12 +68,14 @@ const Header = ({ user, loading }) => {
         {/* Authentication Buttons */}
         <div className={classes.header__auth}>
           {user ? (
-            <button
-              className={classes.header__button_Logout}
-              onClick={handleLogout}
-            >
-              LOG OUT
-            </button>
+            <Link to="/login">
+              <button
+                className={classes.header__button_Logout}
+                onClick={handleLogout}
+              >
+                LOG OUT
+              </button>
+            </Link>
           ) : (
             <Link to="/login">
               <button

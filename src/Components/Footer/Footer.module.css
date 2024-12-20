@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   /* align-items: flex-start; */
-  padding: 50px;
+  padding: 30px;
   
   background-color: #3B455A; /* Dark background color */
   color: #fff; /* White text color */
@@ -98,10 +98,19 @@
   
 }
 @media screen and (max-width: 768px) {
+  .outer_container{
+    padding-top: -40px;
+    /* margin-top: -20px; */
+  }
   .footerContainer {
     display: flex;
     flex-direction: column !important;
     height: auto;
+    text-align: left;
+    
+  }
+  .footerSection{
+    text-align: left;
   }
   .socialIcons {
     display: flex;

@@ -41,6 +41,9 @@
   display: flex;
   gap: 20px;
 }
+.header__link:hover{
+    color: #fe8402;
+}
 
 .header__link {
   text-decoration: none;
@@ -49,9 +52,6 @@
   transition: color 0.3s ease;
 }
 
-.header__link:hover {
-  color: #5f63f2;
-}
 
 .header__auth {
   display: flex;
@@ -69,6 +69,9 @@
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s ease;
+}
+.header__button:hover{
+    background-color: #fe8402;
 }
 
 .header__button_Logout {

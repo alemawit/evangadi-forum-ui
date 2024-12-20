@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import axios from "../../Axios/Axios";
+import Loading from '../../assets/images/loadingicon.gif'
 function LoginSignup() {
   const navigate = useNavigate();
   const emailRef = useRef();
@@ -14,7 +15,7 @@ function LoginSignup() {
   const lastNameRef = useRef();
   const emailSignupRef = useRef();
   const passwordSignupRef = useRef();
-
+ 
   const [isLoginVisible, setIsLoginVisible] = useState(true);
   const [password, setPassword] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -46,21 +47,25 @@ function LoginSignup() {
       return;
     }
     try {
+      
       const { data } = await axios.post("api/users/login", {
         email: emailValue,
         password: passwordValue,
       });
       // alert("Successfully logged in.");
-      navigate("/home");
       localStorage.setItem("token", data.token);
+      navigate("/home");
+     
     } catch (error) {
       if (error.response && error.response.status === 400) {
         alert(error.response.data.message);
       } else {
         alert("Something went wrong. Please try again later.");
       }
-    }
+    } 
   }
+   
+   
 
   // Handle signup form submission
   async function handleSignupSubmit(e) {

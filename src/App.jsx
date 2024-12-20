@@ -74,6 +74,7 @@ function App() {
           <Route path="/" element={<LoginSignup />} />
 
           <Route
+          
             path="/home"
             element={
               <PrivateRoute>
