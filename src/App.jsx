@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import { useNavigate, Navigate } from "react-router-dom";
 import axios from "./Axios/Axios";
 import Home from "./Components/Pages/Home/Home";
-import Header from "./Components/Header/Header";
 import LandingPage from "./Components/Pages/LandingPage/LandingPage";
 import AskQuestion from "./Components/Pages/QuestionPage/QuestionPage";
 import AnswerPage from "./Components/Pages/AnswerPage/AnswerPage";
@@ -68,7 +67,7 @@ function App() {
   return (
     <AppState.Provider value={{ user, setUser, loading }}>
       {/* Pass user and loading state to Header */}
-      <Header user={user} loading={loading} />
+      {/* <Header user={user} loading={loading} /> */}
       <Routes>
         <Route path="/" element={<LandingPage />}>
           <Route path="/" element={<LoginSignup />} />

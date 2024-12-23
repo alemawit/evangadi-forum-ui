@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import classes from "./Header.module.css"; // Import the CSS file for styling
 import logo from "../../assets/images/logo.png";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { AppState } from "../../App";
 
-const Header = ({ user, loading }) => {
+const Header = () => {
+  const {user,Looding}=useContext(AppState);
   const [menuOpen, setMenuOpen] = useState(false); // Track dropdown menu visibility
   const location = useLocation(); // Get the current route
   const navigate = useNavigate();
