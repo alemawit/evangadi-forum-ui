@@ -8,6 +8,9 @@ import axios from "../../Axios/Axios";
 import Loading from '../../assets/images/loadingicon.gif'
 function LoginSignup() {
   const navigate = useNavigate();
+
+  //we use useRef() to directly access their values without tracking them with useState()
+  
   const emailRef = useRef();
   const passwordRef = useRef();
   const usernameRef = useRef();

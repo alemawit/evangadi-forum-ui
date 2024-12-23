@@ -107,10 +107,13 @@
     flex-direction: column !important;
     height: auto;
     text-align: left;
+    padding-left: -30px;
     
   }
   .footerSection{
     text-align: left;
+    margin-left: -90px;
+    
   }
   .socialIcons {
     display: flex;

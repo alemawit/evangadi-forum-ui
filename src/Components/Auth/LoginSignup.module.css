@@ -12,7 +12,7 @@ a {
 
 /* Container for the middle part of the page */
 .middlePart {
-  background-image: url("../../assets/edited.png");
+  /* background-image: url("../../assets/images/background.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -22,7 +22,7 @@ a {
   margin-bottom: 50px;
 }
 .mainContainer{
-  background: url('../../assets/image/background.png') no-repeat center center;
+  background: url('../../assets/images/background.png') no-repeat center center;
   background-size: cover; /* Cover the entire container */
   display: flex;
   justify-content: space-between; /* Space between login and about sections */
@@ -108,16 +108,16 @@ span p a:hover {
 }
 
 .loginButton {
-  background-color: #036cdb;
+  background-color: #516CF0;
   color: white;
   padding: 10px 10px;
   font-size: 16px;
   cursor: pointer;
-  width: 80%;
-  border-color: #036cdb;
+  width: 90%;
+  border-color: #516CF0;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin-left: 35px;
+  margin-left: 25px;
 }
 
 .loginButton:hover {
@@ -192,13 +192,13 @@ span p a:hover {
   font-size: 14px;
 }
 .join {
-  background-color: #036cdb;
+  background-color: #516CF0;
   color: white;
   padding: 7px 7px;
   font-size: 16px;
   cursor: pointer;
   width: 85%;
-  border-color: #036cdb;
+  border-color: #516CF0;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
   margin-left: 35px;
@@ -277,6 +277,16 @@ span p a:hover {
 }
 /* ****responsiveness */
 @media screen and (max-width: 768px) {
+  .middlePart {
+  background-image: url("../../assets/images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 100px;
+  margin-bottom: 50px;
+}
   /* Hide the about section */
   .about {
     display: none;
@@ -296,12 +306,13 @@ span p a:hover {
   /* Ensure the login and register forms take full width */
   .loginForm, 
   .signForm {
-    width: 100%; /* Full width */
+    width: 90%; /* Full width */
     max-width: 650px; /* Optional: Limit maximum width */
     margin: 0 auto; /* Center horizontally */
-    height: auto; /* Allow height to adjust dynamically */
+    /* height: auto; Allow height to adjust dynamically */
     box-shadow: none; /* Remove shadow for simplicity */
     border-radius: 0; /* Remove border-radius */
+    
   }
 
   /* Adjust padding for better spacing */
@@ -313,7 +324,10 @@ span p a:hover {
   .loginButton, 
   .join {
     width: 90%; /* Fit buttons to container width */
-    margin: 10px auto; /* Center and add spacing */
+    align-items: center;
+    margin-left: 30px;
+    
+     /* Center and add spacing */
   }
 
   /* Adjust text sizes for smaller screens */
@@ -337,3 +351,4 @@ span p a:hover {
   }
     
 }
+/*****/

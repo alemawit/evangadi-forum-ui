@@ -10,7 +10,7 @@ import AnswerPage from "./Components/Pages/AnswerPage/AnswerPage";
 import LoginSignup from "./Components/Auth/LoginSignup";
 import Loading from "./assets/images/loadingicon.gif";
 import Four04 from "./Components/Pages/page404/Four04";
-import Footer from "./Components/Footer/Footer";
+
 
 export const AppState = createContext();
 const PrivateRoute = ({ children }) => {
@@ -74,7 +74,6 @@ function App() {
           <Route path="/" element={<LoginSignup />} />
 
           <Route
-          
             path="/home"
             element={
               <PrivateRoute>
@@ -83,8 +82,24 @@ function App() {
             }
           />
           <Route path="/login" element={<LoginSignup />} />
-          <Route path="/questionpage" element={<AskQuestion />} />
-          <Route path="home/answerpage/:questionid" element={<AnswerPage />} />
+
+          <Route
+            path="/questionpage"
+            element={
+              <PrivateRoute>
+                <AskQuestion />
+              </PrivateRoute>
+            }
+          />
+          
+          <Route
+            path="home/answerpage/:questionid"
+            element={
+              <PrivateRoute>
+                <AnswerPage />
+              </PrivateRoute>
+            }
+          />
           <Route path="*" element={<Four04 />} />
         </Route>
       </Routes>
