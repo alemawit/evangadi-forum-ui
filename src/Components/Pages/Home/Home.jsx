@@ -70,14 +70,14 @@ const Home = () => {
           {/* Main Content Section */}
           <main className={classes.mainContent}>
             {/* Search Bar */}
-            <div className={classes.searchBar}>
+            {/* <div className={classes.searchBar}>
               <input
                 type="text"
                 placeholder="Search questions"
                 value={searchQuery}
                 onChange={handleSearchChange}
               />
-            </div>
+            </div> */}
 
             {/* Question Display (if questionid is available) */}
             <AllQuestions />

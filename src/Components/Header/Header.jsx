@@ -6,7 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { AppState } from "../../App";
 
 const Header = () => {
-  const {user,Looding}=useContext(AppState);
+  const {user}=useContext(AppState);
   const [menuOpen, setMenuOpen] = useState(false); // Track dropdown menu visibility
   const location = useLocation(); // Get the current route
   const navigate = useNavigate();
