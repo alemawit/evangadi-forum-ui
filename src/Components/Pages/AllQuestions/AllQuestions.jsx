@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import axios from "../../../Axios/Axios";
+import axiosBase from "../../../API/API";
 import { AppState } from "../../../App";
 import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
@@ -23,7 +23,7 @@ function AllQuestions() {
   // Fetch all questions and sort them by creation date
   async function fetchAllQuestions() {
     try {
-      const response = await axios.get("api/questions", {
+      const response = await axiosBase.get("api/questions", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const sortedQuestions = response.data.sort(

@@ -1,7 +1,7 @@
 import { useEffect, useState, createContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useNavigate, Navigate } from "react-router-dom";
-import axios from "./Axios/Axios";
+import axiosBase from "./API/API";
 import Home from "./Components/Pages/Home/Home";
 import LandingPage from "./Components/Pages/LandingPage/LandingPage";
 import AskQuestion from "./Components/Pages/QuestionPage/QuestionPage";
@@ -30,7 +30,7 @@ function App() {
         return;
       }
       try {
-        const { data } = await axios.get("api/users/check", {
+        const { data } = await axiosBase.get("api/users/check", {
           headers: {
             Authorization: `Bearer ${token}`, // Pass token in Authorization header
           },

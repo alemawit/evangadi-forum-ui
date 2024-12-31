@@ -1,4 +1,4 @@
-import axios from "../../../Axios/Axios";
+import axios from "../../../API/API";
 import { AppState } from "../../../App";
 import { createContext, useContext } from "react";
 import { useRef } from "react";
@@ -24,14 +24,14 @@ function AskQuestion() {
     }
 
     try {
-      await axios.post(
+      await axiosBase.post(
         "api/questions",
         {
           title: title,
-          description: description
-        //   tag:"general"
+          description: description,
+          //   tag:"general"
 
-        //   userid: user.userId,
+          //   userid: user.userId,
         },
         {
           headers: {

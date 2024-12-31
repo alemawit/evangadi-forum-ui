@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
-import axios from "../../Axios/Axios";
+import axiosBase from "../../API/API";
 import Loading from '../../assets/images/loadingicon.gif'
 function LoginSignup() {
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ function LoginSignup() {
     }
     try {
       
-      const { data } = await axios.post("api/users/login", {
+      const { data } = await axiosBase.post("api/users/login", {
         email: emailValue,
         password: passwordValue,
       });
@@ -91,7 +91,7 @@ function LoginSignup() {
       return;
     }
     try {
-      await axios.post("api/users/register", {
+      await axiosBase.post("api/users/register", {
         username: usernameValue,
         firstname: firstValue,
         lastname: lastValue,
